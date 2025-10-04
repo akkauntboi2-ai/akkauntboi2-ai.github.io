@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>mia — каталог</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ff6fb9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7" />
+...
+  <script src="script.js?v=7"></script>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-logo">m</div>
+      <div class="brand-text">
+        <h1>mia</h1>
+        <span>красота и уход</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a id="tgHeaderBtn" class="btn btn-tg" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 240 240" aria-hidden="true"><path d="M120 0a120 120 0 1 0 0 240 120 120 0 0 0 0-240Zm56 78-18 85c-1 6-5 8-10 5l-28-21-14 13c-2 2-4 4-8 4l3-32 60-54c3-3-1-4-5-2l-74 47-32-10c-7-2-7-7 2-10l126-49c6-2 12 1 10 10Z" fill="currentColor"/></svg>
+        <span>Написать в Telegram</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>mia — каталог</h2>
+        <p>Красота и уход каждый день • Быстрый заказ через Telegram</p>
+      </div>
+    </section>
+    <section class="meta-row"><div id="metaInfo" class="meta-info"></div></section>
+    <section class="search-row">
+      <div class="search-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.39-1.42 1.42-5.39-5.39A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 10 4Z"/></svg>
+        <input id="searchInput" type="text" placeholder="Поиск по товарам..." aria-label="Поиск" />
+      </div>
+    </section>
+
+    <section class="chips" id="chipBar" aria-label="Категории"></section>
+
+    <section>
+      <div id="productsGrid" class="products-grid" aria-live="polite"></div>
+<!-- Quick View modal -->
+<div id="quickView" class="modal" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть">✕</button>
+    <img id="qvImg" alt="" class="modal__img" />
+    <h3 id="qvTitle" class="modal__title"></h3>
+    <p id="qvDesc" class="modal__desc"></p>
+    <div class="modal__bottom">
+      <div id="qvPrice" class="price"></div>
+      <button id="qvBuy" class="btn btn-tg" type="button">
+        <svg width="18" height="18" viewBox="0 0 240 240" aria-hidden="true"><path d="M120 0a120 120 0 1 0 0 240 120 120 0 0 0 0-240Zm56 78-18 85c-1 6-5 8-10 5l-28-21-14 13c-2 2-4 4-8 4l3-32 60-54c3-3-1-4-5-2l-74 47-32-10c-7-2-7-7 2-10l126-49c6-2 12 1 10 10Z" fill="currentColor"/></svg>
+        <span>Купить</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Back to top -->
+<button id="toTop" class="to-top" aria-label="Наверх">↑</button>
+
+	</section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© <span id="year"></span> mia. Все права защищены.</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
